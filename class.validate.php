@@ -2,9 +2,9 @@
 
 /**
  * Validate
- * Classe adibita alla validazione di:
- *    - Stringhe
- *    - Numerici
+ * Class to valideate:
+ *    - String
+ *    - Numeric
  *    - Email
  *    - URL
  * 
@@ -20,7 +20,7 @@ class Validate {
 
    # Language
    public $lg_attenzione = "Attenzione ";
-   public $lg_obbligatorio = " è un campo obbligatorio";
+   public $lg_obbligatorio = " &egrave; un campo obbligatorio";
    public $lg_almeno_di = " deve essere almeno di ";
    public $lg_meno_di = " deve essere meno di";
    public $lg_non_valido = " non valido/a";
@@ -32,7 +32,7 @@ class Validate {
     * @return
     */
    function __construct($language){
-      // Ridefinisco in base alla lingua i messaggi di errore
+      // Redefined properties by language
       switch ($language) {
          case "ENG":
             $this->lg_attenzione = "Attention ";
@@ -45,10 +45,10 @@ class Validate {
          case "FRA":
             $this->lg_attenzione = "Attention ";
             $this->lg_obbligatorio = " est un domaine exigent";
-            $this->lg_almeno_di = " doit être au moins ";
-            $this->lg_meno_di = " doit être inférieure ";
+            $this->lg_almeno_di = " doit &ecirc;tre au moins ";
+            $this->lg_meno_di = " doit &ecirc;tre inf&egrave;rieure ";
             $this->lg_non_valido = " pas valide";
-            $this->lg_caratteri = " caractères";
+            $this->lg_caratteri = " caract&egrave;res";
          break;
          case "DEU":
             $this->lg_attenzione = "Aandacht ";
@@ -59,11 +59,11 @@ class Validate {
             $this->lg_caratteri = " tekens";
          break;
          case "ESP":
-            $this->lg_attenzione = "Atención ";
+            $this->lg_attenzione = "Atenci&ograve;n ";
             $this->lg_obbligatorio = " es un campo requieren";
             $this->lg_almeno_di = " debe tener al menos ";
             $this->lg_meno_di = " debe ser menor que ";
-            $this->lg_non_valido = " no es válido";
+            $this->lg_non_valido = " no es v&agrave;lido";
             $this->lg_caratteri = " personajes";
          break;
       }
@@ -71,7 +71,7 @@ class Validate {
 
    /**
     * Validate::String()
-    * Validazione stringhe generiche
+    * Validation generci string
     * 
     * @param mixed $value
     * @param mixed $name
@@ -100,7 +100,7 @@ class Validate {
 
    /**
     * Validate::Numeric()
-    * Validazione numerici
+    * Validation numeric
     * 
     * @param mixed $value
     * @param bool $mandatory
@@ -133,7 +133,7 @@ class Validate {
 
    /**
     * Validate::Email()
-    * Validazione indirizzi email
+    * Validations email adresses
     * 
     * @param mixed $value
     * @param mixed $name
@@ -168,7 +168,7 @@ class Validate {
 
    /**
     * Validate::URL()
-    * Validazione URL
+    * Validation URL
     * 
     * @param mixed $value
     * @param mixed $name
@@ -203,7 +203,7 @@ class Validate {
 
    /**
     * Validate::Date()
-    * Validazione Date in formato d/m/y
+    * Validation Date in format d/m/y
     * 
     * @param mixed $value
     * @param mixed $name
@@ -227,7 +227,7 @@ class Validate {
 
    /**
     * Validate::strtobool()
-    * Converte in boolean una stringa
+    * Convert string to boolean
     * 
     * @param mixed $value
     * @return boolean
