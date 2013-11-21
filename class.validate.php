@@ -36,7 +36,7 @@ class Validate {
       switch ($language) {
          case "ENG":
             $this->lg_attenzione = "Attention ";
-            $this->lg_obbligatorio = " is a require field";
+            $this->lg_obbligatorio = " is a required field";
             $this->lg_almeno_di = " must be at least ";
             $this->lg_meno_di = " must be less than ";
             $this->lg_non_valido = " not valid";
@@ -71,7 +71,7 @@ class Validate {
 
    /**
     * Validate::String()
-    * Validation generci string
+    * Validation generic string
     * 
     * @param mixed $value
     * @param mixed $name
@@ -82,7 +82,7 @@ class Validate {
     */
    function String($value, $name, $mandatory=false, $min_len=0, $max_len=255) {
       $mandatory = $this->strtobool($mandatory);
-      if ( ($mandatory===true) && (strlen($value)==0) ) {
+      if ( ($mandatory===true) && (strlen( trim($value) )==0) ) {
          return $this->lg_attenzione.$name.$this->lg_obbligatorio."<br />";
          break;
       } else {
@@ -110,7 +110,7 @@ class Validate {
     */
    function Numeric($value, $name, $mandatory=false, $min_len=0, $max_len=255) {
       $mandatory = $this->strtobool($mandatory);
-      if ( ($mandatory===true) && (strlen($value)==0) ) {
+      if ( ($mandatory===true) && (strlen( trim($value) )==0) ) {
          return $this->lg_attenzione.$name.$this->lg_obbligatorio."<br />";
          break;
       } else {
@@ -144,7 +144,7 @@ class Validate {
     */
    function Email($value, $name="E-mail", $mandatory=false, $min_len=0, $max_len=255){
       $mandatory = $this->strtobool($mandatory);
-      if ( ($mandatory===true) && (strlen($value)==0) ) {
+      if ( ($mandatory===true) && (strlen( trim($value) )==0) ) {
          return $this->lg_attenzione.$name.$this->lg_obbligatorio."<br />";
          break;
       } else {
@@ -179,7 +179,7 @@ class Validate {
     */
    function URL($value, $name="Sito internet", $mandatory=false, $min_len=0, $max_len=255) {
       $mandatory = $this->strtobool($mandatory);
-      if ( ($mandatory===true) && (strlen($value)==0) ) {
+      if ( ($mandatory===true) && (strlen( trim($value) )==0) ) {
          return $this->lg_attenzione.$name.$this->lg_obbligatorio."<br />";
          break;
       } else {
@@ -213,7 +213,7 @@ class Validate {
     */
    function Date($value, $name="Data", $delimiter="/", $mandatory=false) {
       $mandatory = $this->strtobool($mandatory);
-      if ( ($mandatory===true) && (strlen($value)==0) ) {
+      if ( ($mandatory===true) && (strlen( trim($value) )==0) ) {
          return $this->lg_attenzione.$name.$this->lg_obbligatorio."<br />";
          break;
       } else {
