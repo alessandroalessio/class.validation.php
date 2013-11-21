@@ -25,8 +25,8 @@ $error .= $validate->Numeric( $_POST["inputname"], "Label of field", true, 3, 10
 In all methods the first passed value it's the input value, the second it's the label of input and the third it's obligatoriness.
 
 ##Public Methods
--String(value, label, mandatory, minimum length, maximum length)
--Numeric(value, label, mandatory, minimum length, maximum length)
--Email(value, label, mandatory, minimum length, maximum length)
--URL(value, label, mandatory, minimum length, maximum length)
--Date(value, label, delimiter, mandatory)
+*String(value, label, mandatory, minimum length, maximum length)
+*Numeric(value, label, mandatory, minimum length, maximum length)
+*Email(value, label, mandatory, minimum length, maximum length)
+*URL(value, label, mandatory, minimum length, maximum length)
+*Date(value, label, delimiter, mandatory)
