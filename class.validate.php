@@ -22,7 +22,7 @@ class Validate {
    public $lg_attenzione = "Attenzione ";
    public $lg_obbligatorio = " &egrave; un campo obbligatorio";
    public $lg_almeno_di = " deve essere almeno di ";
-   public $lg_meno_di = " deve essere meno di";
+   public $lg_meno_di = " deve essere al massimo di ";
    public $lg_non_valido = " non valido/a";
    public $lg_caratteri = " caratteri";
 
@@ -36,9 +36,9 @@ class Validate {
       switch ($language) {
          case "ENG":
             $this->lg_attenzione = "Attention ";
-            $this->lg_obbligatorio = " is a required field";
+            $this->lg_obbligatorio = " is a require field";
             $this->lg_almeno_di = " must be at least ";
-            $this->lg_meno_di = " must be less than ";
+            $this->lg_meno_di = " must be a maximum of ";
             $this->lg_non_valido = " not valid";
             $this->lg_caratteri = " characters";
          break;
@@ -46,7 +46,7 @@ class Validate {
             $this->lg_attenzione = "Attention ";
             $this->lg_obbligatorio = " est un domaine exigent";
             $this->lg_almeno_di = " doit &ecirc;tre au moins ";
-            $this->lg_meno_di = " doit &ecirc;tre inf&egrave;rieure ";
+            $this->lg_meno_di = " doit &ecirc;tre d'un maximum de ";
             $this->lg_non_valido = " pas valide";
             $this->lg_caratteri = " caract&egrave;res";
          break;
@@ -54,7 +54,7 @@ class Validate {
             $this->lg_attenzione = "Aandacht ";
             $this->lg_obbligatorio = " een require veld";
             $this->lg_almeno_di = " moet op zijn minst ";
-            $this->lg_meno_di = " moet minder dan ";
+            $this->lg_meno_di = " moet darf maximal ";
             $this->lg_non_valido = " ongeldig";
             $this->lg_caratteri = " tekens";
          break;
@@ -62,7 +62,7 @@ class Validate {
             $this->lg_attenzione = "Atenci&ograve;n ";
             $this->lg_obbligatorio = " es un campo requieren";
             $this->lg_almeno_di = " debe tener al menos ";
-            $this->lg_meno_di = " debe ser menor que ";
+            $this->lg_meno_di = " debe ser un máximo de ";
             $this->lg_non_valido = " no es v&agrave;lido";
             $this->lg_caratteri = " personajes";
          break;
@@ -87,8 +87,8 @@ class Validate {
          break;
       } else {
          if (strlen($value)>0) {
-            if (strlen($value)<$min_len) {
-               return $this->lg_attenzione.$name.$this->lg_almeno_di.($min_len+1).$this->lg_caratteri."<br />";
+            if (strlen($value)<=$min_len) {
+               return $this->lg_attenzione.$name.$this->lg_almeno_di.$min_len.$this->lg_caratteri."<br />";
                break;
             } elseif (strlen($value)>$max_len) {
                return $this->lg_attenzione.$name.$this->lg_meno_di.$max_len.$this->lg_caratteri."<br />";
@@ -116,7 +116,7 @@ class Validate {
       } else {
          if (strlen($value)>0) {
             if (strlen($value)<=$min_len) {
-               return $this->lg_attenzione.$name.$this->lg_almeno_di.($min_len+1).$this->lg_caratteri."<br />";
+               return $this->lg_attenzione.$name.$this->lg_almeno_di.$min_len.$this->lg_caratteri."<br />";
                break;
             } elseif (strlen($value)>$max_len) {
                return $this->lg_attenzione.$name.$this->lg_meno_di.$max_len.$this->lg_caratteri."<br />";
@@ -150,7 +150,7 @@ class Validate {
       } else {
          if (strlen($value)>0) {
             if (strlen($value)<=$min_len) {
-               return $this->lg_attenzione.$name.$this->lg_almeno_di.($min_len+1).$this->lg_caratteri."<br />";
+               return $this->lg_attenzione.$name.$this->lg_almeno_di.$min_len.$this->lg_caratteri."<br />";
                break;
             } elseif (strlen($value)>$max_len) {
                return $this->lg_attenzione.$name.$this->lg_meno_di.$max_len.$this->lg_caratteri."<br />";
@@ -185,7 +185,7 @@ class Validate {
       } else {
          if (strlen($value)>0) {
             if (strlen($value)<=$min_len) {
-               return $this->lg_attenzione.$name.$this->lg_almeno_di.($min_len+1).$this->lg_caratteri."<br />";
+               return $this->lg_attenzione.$name.$this->lg_almeno_di.$min_len.$this->lg_caratteri."<br />";
                break;
             } elseif (strlen($value)>$max_len) {
                return $this->lg_attenzione.$name.$this->lg_meno_di.$max_len.$this->lg_caratteri."<br />";
