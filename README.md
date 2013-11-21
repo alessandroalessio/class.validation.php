@@ -23,3 +23,7 @@ $error .= $validate->Numeric( $_POST["inputname"], "Label of field", true, 3, 10
 </code>
 
 In all methods the first passed value it's the input value, the second it's the label of input and the third it's obligatoriness.
+
+##Methods
+String
+Numeric
